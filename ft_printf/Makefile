@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: azari <azari@student.42.fr>                +#+  +:+       +#+         #
+#    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 20:39:15 by azari             #+#    #+#              #
-#    Updated: 2022/11/04 20:31:05 by azari            ###   ########.fr        #
+#    Updated: 2023/03/12 15:25:18 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,16 +19,16 @@ OFILES = ${CFILES:.c=.o}
 all : ${NAME}
 
 ${NAME} : ${OFILES}
-	ar -crs ${NAME} ${OFILES}
+	@ar -crs ${NAME} ${OFILES}
 
 %.o:%.c ft_printf.h
-	${CC} -c ${FLAGS} $<
+	@${CC} -c ${FLAGS} $<
 
 clean :
-	rm -f ${OFILES}
+	@rm -f ${OFILES}
 
 fclean : clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 
 re : fclean all
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: azari <azari@student.42.fr>                +#+  +:+       +#+         #
+#    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 10:30:04 by azari             #+#    #+#              #
-#    Updated: 2022/10/21 12:09:08 by azari            ###   ########.fr        #
+#    Updated: 2023/03/12 15:25:46 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,19 +26,19 @@ BONUSO = ${BONUSC:.c=.o}
 all : ${NAME}
 
 ${NAME} : ${OFILES}
-	ar -crs ${NAME} ${OFILES}
+	@ar -crs ${NAME} ${OFILES}
 	
 bonus : ${BONUSO}
-	ar -crs ${NAME} ${BONUSO}
+	@ar -crs ${NAME} ${BONUSO}
 
 %.o:%.c libft.h
-	${CC} -c ${FLAGS} $<
+	@${CC} -c ${FLAGS} $<
 
 clean :
-	rm -f ${OFILES} ${BONUSO}
+	@rm -f ${OFILES} ${BONUSO}
 
 fclean : clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 
 re : fclean all bonus
 

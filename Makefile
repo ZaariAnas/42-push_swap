@@ -6,25 +6,35 @@
 #    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/12 12:15:21 by azari             #+#    #+#              #
-#    Updated: 2023/03/12 12:28:30 by azari            ###   ########.fr        #
+#    Updated: 2023/03/12 15:29:11 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= gcc
+CC			= 	gcc
 
-FLAGS	= -Wall -Wextra -Werror
+CFLAGS		= 	-Wall -Wextra -Werror -MMD -fsanitize=address 
 
-NAME 	= so_long
+NAME 		= 	push_swap
 
-CFILES	= pushswap.c										\
+LIBFT 		= 	libft/libft.a
 
-OFILES	= $(CFILES:.c=.o)
+FT_PRINTF 	= 	ft_printf/libftprintf.a
 
-all : $(NAME)
+CFILES		= 	pushswap.c	\
+				instruc.c	\
 
-	
-$(NAME) : $(OFILES)
-	@$(CC) $(OFILES) -o $(NAME)
+OFILES		= 	$(CFILES:.c=.o)
+
+DEP			= 	$(CFILES:.c=.d)
+
+all 	:   $(NAME) 
+
+$(NAME) : $(OFILES) 
+	@make -C libft
+	@echo "\033[33;1m😎  making LIBFT\033[0m"
+	@make -C ft_printf
+	@echo "\033[33;1m😎  making FT_PRINTF\033[0m"
+	@$(CC) $(CFILES) libft/libft.a ft_printf/libftprintf.a -o $(NAME)
 	@echo "\033[33;1m😎  done making\033[0m"
 	@echo "\033[93;1m                                                           \n\
 	██████╗ ██╗   ██╗███████╗██╗  ██╗        ███████╗██╗    ██╗ █████╗ ██████╗	\n\
@@ -36,16 +46,17 @@ $(NAME) : $(OFILES)
                                                                        	 		\033[0m"
 	@echo "                                                      \033[97mBy: Anas Zari"
 	
-%.o:%.c
-	@$(CC) $(CFLAGS) -c $^ -o $@
-	
 clean	:
 	@rm -rf $(OFILES)
 	@echo "\033[32m✅  object files removed successfully.\033[0m"
 
 fclean	: clean
-	@rm -rf $(NAME)
+	@make fclean -C libft
+	@make fclean -C ft_printf
+	@rm -rf $(DEP) $(NAME)
 	@echo "\033[32m✅  object files and archive removed successfully.\033[0m"
 	@echo "\033[33;1m😎  done cleaning\033[0m"
 
 re		: fclean all
+
+-include $(DEP)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azari <azari@student.42.fr>                +#+  +:+       +#+        */
+/*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:08:34 by azari             #+#    #+#             */
-/*   Updated: 2022/11/02 15:18:41 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/12 14:57:04 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdio.h>
 # include <unistd.h>
 
-int	ft_strlen(char *s);
+int	ft_strlenpr(char *s);
 int	ft_putchar(int c);
 int	ft_putstr(char *s);
 int	ft_putnbr_base_u(unsigned long long nbr, char *base);
