@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azari <azari@student.42.fr>                +#+  +:+       +#+        */
+/*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:12:29 by azari             #+#    #+#             */
-/*   Updated: 2022/11/03 13:40:54 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/13 09:45:28 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *s)
+int	ft_strlen_prnt(char *s)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ int	ft_putstr(char *s)
 		write(1, "(null)", 6);
 		return (6);
 	}
-	i = ft_strlen(s);
+	i = ft_strlen_prnt(s);
 	write(1, s, i);
 	if (i < 0)
 		return (-1);
@@ -69,7 +69,7 @@ int	ft_putnbr_base_u(unsigned long long nbr, char *base)
 	unsigned long long	lenbase;
 	int					read;
 
-	lenbase = ft_strlen(base);
+	lenbase = ft_strlen_prnt(base);
 	read = 0;
 	if (nbr >= lenbase)
 		read += ft_putnbr_base_u(nbr / lenbase, base);

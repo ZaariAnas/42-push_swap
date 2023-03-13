@@ -3,19 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azari <azari@student.42.fr>                +#+  +:+       +#+        */
+/*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:58:08 by azari             #+#    #+#             */
-/*   Updated: 2022/10/21 12:17:34 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/13 09:00:28 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define ARG_INT_ERR "error\nunvalid type of argument :: integer needed"
+
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
+
 
 typedef struct s_list
 {
