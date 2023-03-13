@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:56:40 by azari             #+#    #+#             */
-/*   Updated: 2023/03/13 13:33:14 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/13 18:41:47 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@
 // 	// check if there is duplicates
 // }
 
-t_list	*ft_arg_parser(char **av)
-{
-	int		i;
-	t_list	*head;
+// t_list	*ft_arg_parser(char **av)
+// {
+// 	int		i;
+// 	t_list	*head;
 
-	head = NULL;
-	i = -1;
-	while (av[++i])
-		ft_lstadd_back(&head, ft_lstnew(ft_itoa(av[i])));
-	return (head);
-}
+// 	head = NULL;
+// 	i = -1;
+// 	while (av[++i])
+// 		ft_lstadd_back(&head, ft_lstnew((void *)ft_atoi(av[i])));
+// 	return (head);
+// }
 
 int main(int ac, char **av)
 {
