@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:13:44 by azari             #+#    #+#             */
-/*   Updated: 2023/03/13 09:40:05 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/14 07:46:54 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		ft_isnumber(char *arg);
 // void	ft_raise_arg_trigger(int ac, char **av);
 void	ft_raise_error(char *str);
 int		ft_arg_parser(char *av);
+char	*ft_strtok(char *str, char *sep);
 
 #endif

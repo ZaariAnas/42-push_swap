@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:12:54 by azari             #+#    #+#             */
-/*   Updated: 2023/03/13 19:04:15 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:48:24 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,35 @@ char	*ft_strtok(char *str, char *sep)
 	if (*container && ft_strchr(sep, *container))
 		container++;
 	return (rslt);
+}
+
+int main(int ac, char **av)
+{
+
+	// if (ac > 1)
+	// {
+	// 	int i = ft_strdigit(av[1]);
+	// 	if (i)
+	// 		printf("av[1] --> is digit\n");
+	// 	else
+	// 		printf("av[1] --> is not digit\n");
+	// }
+	if (ac > 1)
+	{
+		int i;
+		i = 1;
+		char *token = ft_strtok(av[1], " ");
+		while (token && av[i])
+		{
+			printf("token --> [%s]\n", token);
+			token = ft_strtok(NULL, " ");
+			if (!token && av[++i])
+				token = ft_strtok(av[i], " ");
+			if (!token && av[i])
+			{
+				write(2, ARG_INT_ERR, 49);
+				exit(0);
+			}
+		}
+	}
 }
