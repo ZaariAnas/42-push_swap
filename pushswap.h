@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:13:44 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 17:55:55 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/15 18:38:33 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,8 @@
 # include "ft_printf/ft_printf.h"
 
 t_list	*ft_parser(char	**av);
+void	sa(t_list **lst);
+void	sb(t_list **lst);
+void	ss(t_list **lst1, t_list **lst2);
 
 #endif
