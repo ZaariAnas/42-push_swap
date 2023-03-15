@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:51:49 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 11:58:17 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/15 19:19:58 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	while (tmp->next)
 	{
 		if (tmp->content == new->content)
-			ft_raise_error(ARG_DUP_ERR, 49);
+			ft_raise_error();
 		tmp = tmp -> next;
 	}
 	if (tmp->content == new->content)
-		ft_raise_error(ARG_DUP_ERR, 49);
+		ft_raise_error();
 	tmp->next = new;
 }

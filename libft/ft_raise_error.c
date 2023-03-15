@@ -6,14 +6,14 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:13:59 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 17:57:06 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/15 19:19:42 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_raise_error(char *str, int size)
+void	ft_raise_error()
 {
-	write(1, str, size);
+	write(1, "error\n", 6);
 	exit(0);
 }

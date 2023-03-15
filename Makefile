@@ -6,13 +6,13 @@
 #    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/12 12:15:21 by azari             #+#    #+#              #
-#    Updated: 2023/03/15 16:40:49 by azari            ###   ########.fr        #
+#    Updated: 2023/03/15 19:15:45 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			= 	gcc
 
-CFLAGS		= 	-Wall -Wextra -Werror -MMD -fsanitize=address 
+CFLAGS		= 	-Wall -Wextra -Werror -fsanitize=address 
 
 NAME 		= 	push_swap
 
@@ -20,15 +20,13 @@ LIBFT 		= 	libft/libft.a
 
 FT_PRINTF 	= 	ft_printf/libftprintf.a
 
-CFILES		= 	pushswap.c		\
-				src/instruc.c	\
-				src/ft_parser.c	\
+CFILES		= 	pushswap.c				\
+				src/ft_swap_instruc.c	\
+				src/ft_parser.c			\
 
 OFILES		= 	$(CFILES:.c=.o)
 
-DEP			= 	$(CFILES:.c=.d)
-
-all 	:   $(NAME) 
+all 	:   $(NAME)
 
 $(NAME) : $(OFILES) 
 	@make bonus -C libft
@@ -46,7 +44,7 @@ $(NAME) : $(OFILES)
 		╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝		\n\
                                                                        	 		\033[0m"
 	@echo "                                                      \033[97mBy: Anas Zari"
-	
+
 clean	:
 	@rm -rf $(OFILES)
 	@echo "\033[32m✅  object files removed successfully.\033[0m"
@@ -59,5 +57,3 @@ fclean	: clean
 	@echo "\033[33;1m😎  done cleaning\033[0m"
 
 re		: fclean all
-
--include $(DEP)

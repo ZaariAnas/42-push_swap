@@ -6,17 +6,12 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:58:08 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 17:57:26 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/15 19:20:08 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# define ARG_INT_ERR "error\nunvalid type of argument :: integer needed"
-# define ARG_NUM_ERR "error\ninsufficient number of arguments"
-# define ARG_DUP_ERR "error\nunvalid arguments :: no duplicates allowed"
-# define ARG_SORT_ERR "error\nunvalid arguments :: arguments sorted"
 
 # include <stdio.h>
 # include <unistd.h>
@@ -49,7 +44,7 @@ int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstdelone(t_list *lst, void (*del)(int));
 void	ft_lstclear(t_list **lst, void (*del)(int));
-void	ft_raise_error(char *str, int size);
+void	ft_raise_error();
 int		ft_check_sort_list(t_list *lst);
 char	*ft_strtok(char *str, char *sep);
 

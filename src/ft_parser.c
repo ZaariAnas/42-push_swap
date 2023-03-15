@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 07:45:17 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 17:57:47 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/15 19:21:03 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ t_list	*ft_parser(char	**av)
 		if (!token && av[++i])
 			token = ft_strtok(av[i], " ");
 		if (!token && av[i])
-			ft_raise_error(ARG_INT_ERR, 49);
+			ft_raise_error();
 	}
 	if ((!token && av[i]) || ft_check_sort_list(list))
-		ft_raise_error(ARG_SORT_ERR, 44);
+		ft_raise_error();
 	return (list);
 }
