@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:58:08 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 16:36:30 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/15 17:57:26 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 # define LIBFT_H
 
 # define ARG_INT_ERR "error\nunvalid type of argument :: integer needed"
+# define ARG_NUM_ERR "error\ninsufficient number of arguments"
 # define ARG_DUP_ERR "error\nunvalid arguments :: no duplicates allowed"
+# define ARG_SORT_ERR "error\nunvalid arguments :: arguments sorted"
 
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-
 
 typedef struct s_list
 {
@@ -49,5 +50,7 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstdelone(t_list *lst, void (*del)(int));
 void	ft_lstclear(t_list **lst, void (*del)(int));
 void	ft_raise_error(char *str, int size);
+int		ft_check_sort_list(t_list *lst);
+char	*ft_strtok(char *str, char *sep);
 
 #endif

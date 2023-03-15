@@ -6,36 +6,18 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 07:45:17 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 17:29:04 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/15 17:57:47 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../pushswap.h"
-
-int	ft_check_sort_list(t_list *lst)
-{
-	t_list 	*tmp;
-	int		asc;
-	int		desc;
-
-	tmp = lst;
-	asc = 1;
-	desc = 1;
-	while (tmp->next)
-	{
-		(tmp->content > tmp->next->content) && (asc = 0);	
-		(tmp->content < tmp->next->content) && (desc = 0);
-		tmp = tmp->next;
-	}
-	return (asc || desc);
-}
+#include "../pushswap.h"
 
 t_list	*ft_parser(char	**av)
 {
-	t_list 	*list;
-	char 	*token;
-	int 	i;
-	
+	t_list	*list;
+	char	*token;
+	int		i;
+
 	i = 1;
 	list = NULL;
 	token = ft_strtok(av[1], " ");
