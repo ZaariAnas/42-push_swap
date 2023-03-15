@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_raise_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azari <azari@student.42.fr>                +#+  +:+       +#+        */
+/*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:53:11 by azari             #+#    #+#             */
-/*   Updated: 2022/10/20 10:54:48 by azari            ###   ########.fr       */
+/*   Created: 2023/03/15 11:13:59 by azari             #+#    #+#             */
+/*   Updated: 2023/03/15 16:17:54 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_raise_error(char *str, int size)
 {
-	void	*ptr;
-
-	ptr = malloc(count * size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	write(1, str, size);
+	exit(0);
 }

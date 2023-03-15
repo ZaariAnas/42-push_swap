@@ -6,7 +6,7 @@
 #    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/12 12:15:21 by azari             #+#    #+#              #
-#    Updated: 2023/03/13 13:33:59 by azari            ###   ########.fr        #
+#    Updated: 2023/03/15 16:40:49 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,9 @@ LIBFT 		= 	libft/libft.a
 
 FT_PRINTF 	= 	ft_printf/libftprintf.a
 
-CFILES		= 	pushswap.c	\
-				instruc.c	\
+CFILES		= 	pushswap.c		\
+				src/instruc.c	\
+				src/ft_parser.c	\
 
 OFILES		= 	$(CFILES:.c=.o)
 
@@ -30,7 +31,7 @@ DEP			= 	$(CFILES:.c=.d)
 all 	:   $(NAME) 
 
 $(NAME) : $(OFILES) 
-	@make -C libft
+	@make bonus -C libft
 	@echo "\033[33;1m😎  making LIBFT\033[0m"
 	@make -C ft_printf
 	@echo "\033[33;1m😎  making FT_PRINTF\033[0m"
