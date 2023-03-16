@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:50:24 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 14:15:35 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:47:07 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ft_find_min_index(t_list **stack)
 
 	tmp = *stack;
 	i = 0;
+	index = 0;
 	min = tmp->content;
 	while (tmp)
 	{

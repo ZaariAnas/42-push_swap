@@ -9626,6 +9626,38 @@
               ]
             ],
             "isComplete": true
+          },
+          "98be59d8-d4a5-4f2e-2638-15f070c6a82f": {
+            "id": "98be59d8-d4a5-4f2e-2638-15f070c6a82f",
+            "type": "draw",
+            "name": "Draw",
+            "parentId": "page",
+            "childIndex": 69,
+            "point": [
+              4.25,
+              2843.51
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "points": [
+              [
+                0,
+                0,
+                0.5
+              ],
+              [
+                0,
+                0,
+                0.5
+              ]
+            ],
+            "isComplete": true
           }
         },
         "bindings": {}

@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 08:18:10 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 13:23:16 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:50:18 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	ft_push(t_list **stack_a, t_list **stack_b)
 void	pa(t_list **stack_a, t_list **stack_b)
 {
 	ft_push(stack_a, stack_b);
-	ft_putendl_fd("pa\n", 1);
+	ft_putendl_fd("pa", 1);
 }
 
 void	pb(t_list **stack_a, t_list **stack_b)
 {
 	ft_push(stack_a, stack_b);
-	ft_putendl_fd("pb\n", 1);
+	ft_putendl_fd("pb", 1);
 }
