@@ -6,13 +6,13 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:13:59 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 06:26:08 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:57:38 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_raise_error()
+void	ft_raise_error(void)
 {
 	write(1, "Error\n", 6);
 	exit(0);

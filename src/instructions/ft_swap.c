@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:12:54 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 10:20:12 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:58:44 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	sa(t_list **lst)
 void	sb(t_list **lst)
 {
 	ft_swap(lst);
-	ft_putendl_fd("sb", 1);	
+	ft_putendl_fd("sb", 1);
 }
 
 void	ss(t_list **lst1, t_list **lst2)

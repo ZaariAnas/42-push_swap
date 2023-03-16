@@ -6,7 +6,7 @@
 #    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/12 12:15:21 by azari             #+#    #+#              #
-#    Updated: 2023/03/16 12:09:33 by azari            ###   ########.fr        #
+#    Updated: 2023/03/16 14:56:00 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS		= 	-Wall -Wextra -Werror -fsanitize=address
 
 NAME 		= 	push_swap
 
-LIBFT 		= 	libft/libft.a
+LIBFT 		= 	libft/libft.a 
 
 CFILES		= 	pushswap.c							\
 				src/instructions/ft_push.c			\

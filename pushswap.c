@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:56:40 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 14:49:37 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:59:22 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,5 @@ int	main(int ac, char **av)
 		printf("list_a --> [%d]\n", tmp->content);
 		tmp = tmp->next;
 	}
-	// tmp = list_b;
-	// printf("------[ b ]------\n");
-	// while (tmp)
-	// {
-	// 	printf("list_b --> [%d]\n", tmp->content);
-	// 	tmp = tmp->next;
-	// }
 	return (0);
 }
-
