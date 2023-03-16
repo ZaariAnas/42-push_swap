@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:56:40 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 10:21:24 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/16 10:23:54 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 		printf("list_a --> [%d]\n", tmp->content);
 		tmp = tmp->next;
 	}
-	ra(&list_a);
+	rr(&list_a, &list_a);
 	printf("------[ ra ]------\n");
 	tmp = list_a;
 	printf("------[ a ]------\n");
