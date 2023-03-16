@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_instruc.c                                  :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 14:12:54 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 08:09:40 by azari            ###   ########.fr       */
+/*   Created: 2023/03/16 08:18:10 by azari             #+#    #+#             */
+/*   Updated: 2023/03/16 10:20:25 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "../../pushswap.h"
 
-void	ft_swap(t_list **lst)
+void	ft_push(t_list **stack_a, t_list **stack_b)
 {
-	int	tmp;
+	t_list	*tmp;
 
-	if (!*lst || !(*lst)->next)
+	if (!(*stack_a))
 		return ;
-	tmp = (*lst)->content;
-	(*lst)->content = (*lst)->next->content;
-	(*lst)->next->content = tmp;
+	tmp = (*stack_a);
+	(*stack_a) = (*stack_a)->next;
+	tmp->next = (*stack_b);
+	(*stack_b) = tmp;
 }
 
-void	sa(t_list **lst)
+void	pa(t_list **stack_a, t_list **stack_b)
 {
-	ft_swap(lst);
-	ft_putendl_fd("sa", 1);
+	ft_push(stack_a, stack_b);
+	ft_putendl_fd("pa\n", 1);
 }
 
-void	sb(t_list **lst)
+void	pb(t_list **stack_b, t_list **stack_a)
 {
-	ft_swap(lst);
-	ft_putendl_fd("sb", 1);	
-}
-
-void	ss(t_list **lst1, t_list **lst2)
-{
-	ft_swap(lst1);
-	ft_swap(lst2);
-	ft_putendl_fd("ss", 1);
+	ft_push(stack_b, stack_a);
+	ft_putendl_fd("pb\n", 1);
 }

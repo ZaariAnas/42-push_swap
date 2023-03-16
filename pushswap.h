@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:13:44 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 19:19:04 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/16 10:16:13 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,16 @@ t_list	*ft_parser(char	**av);
 void	sa(t_list **lst);
 void	sb(t_list **lst);
 void	ss(t_list **lst1, t_list **lst2);
+void	ft_push(t_list **stack_a, t_list **stack_b);
+void	pa(t_list **stack_a, t_list **stack_b);
+void	pb(t_list **stack_b, t_list **stack_a);
+void	ft_rotate(t_list **stack);
+void	ra(t_list **stack);
+void	rb(t_list **stack);
+void	rr(t_list **stack_a, t_list **stack_b);
+void	ft_rrotate(t_list **stack);
+void	rra(t_list **stack);
+void	rrb(t_list **stack);
+void	rrr(t_list **stack_a, t_list **stack_b);
 
 #endif

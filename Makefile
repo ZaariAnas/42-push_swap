@@ -6,7 +6,7 @@
 #    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/12 12:15:21 by azari             #+#    #+#              #
-#    Updated: 2023/03/15 19:15:45 by azari            ###   ########.fr        #
+#    Updated: 2023/03/16 10:20:01 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,12 @@ LIBFT 		= 	libft/libft.a
 
 FT_PRINTF 	= 	ft_printf/libftprintf.a
 
-CFILES		= 	pushswap.c				\
-				src/ft_swap_instruc.c	\
-				src/ft_parser.c			\
+CFILES		= 	pushswap.c						\
+				src/instructions/ft_push.c		\
+				src/instructions/ft_swap.c		\
+				src/instructions/ft_rrotate.c	\
+				src/instructions/ft_rotate.c	\
+				src/parsing/ft_parser.c			\
 
 OFILES		= 	$(CFILES:.c=.o)
 

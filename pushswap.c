@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:56:40 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 08:02:22 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/16 10:21:24 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,35 @@
 
 int	main(int ac, char **av)
 {
-	t_list	*list;
+	t_list	*list_a;
+	t_list	*list_b;
 	t_list	*tmp;
 
 	if (ac < 2)
 		ft_raise_error();
-	list = ft_parser(av);
-	tmp = list;
+	list_a = ft_parser(av);
+	tmp = list_a;
+	list_b = NULL;
 	while (tmp)
 	{
-		printf("list --> [%d]\n", tmp->content);
+		printf("list_a --> [%d]\n", tmp->content);
 		tmp = tmp->next;
 	}
-	sa(&list);
-	printf("------[after swap]------\n");
-	tmp = list;
+	ra(&list_a);
+	printf("------[ ra ]------\n");
+	tmp = list_a;
+	printf("------[ a ]------\n");
 	while (tmp)
 	{
-		printf("list --> [%d]\n", tmp->content);
+		printf("list_a --> [%d]\n", tmp->content);
 		tmp = tmp->next;
 	}
+	// tmp = list_b;
+	// printf("------[ b ]------\n");
+	// while (tmp)
+	// {
+	// 	printf("list_b --> [%d]\n", tmp->content);
+	// 	tmp = tmp->next;
+	// }
 	return (0);
 }
