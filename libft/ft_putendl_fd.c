@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_sort_list.c                               :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
+/*   By: azari <azari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 17:42:59 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 08:14:16 by azari            ###   ########.fr       */
+/*   Created: 2022/10/19 11:42:53 by azari             #+#    #+#             */
+/*   Updated: 2022/10/19 14:17:35 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check_sort_list(t_list *lst)
+void	ft_putendl_fd(char *s, int fd)
 {
-	t_list	*tmp;
-	int		asc;
-
-	tmp = lst;
-	asc = 1;
-	while (tmp->next)
-	{
-		(tmp->content > tmp->next->content) && (asc = 0);
-		tmp = tmp->next;
-	}
-	return (asc);
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }

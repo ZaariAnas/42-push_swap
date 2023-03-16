@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruc.c                                          :+:      :+:    :+:   */
+/*   ft_swap_instruc.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:12:54 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 18:46:11 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/16 08:09:40 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-void	sa(t_list **lst)
+void	ft_swap(t_list **lst)
 {
 	int	tmp;
 
@@ -21,23 +21,23 @@ void	sa(t_list **lst)
 	tmp = (*lst)->content;
 	(*lst)->content = (*lst)->next->content;
 	(*lst)->next->content = tmp;
-	printf("sa\n");
+}
+
+void	sa(t_list **lst)
+{
+	ft_swap(lst);
+	ft_putendl_fd("sa", 1);
 }
 
 void	sb(t_list **lst)
 {
-	int	tmp;
-
-	if (!*lst || !(*lst)->next)
-		return ;
-	tmp = (*lst)->content;
-	(*lst)->content = (*lst)->next->content;
-	(*lst)->next->content = tmp;
-	printf("sb\n");
+	ft_swap(lst);
+	ft_putendl_fd("sb", 1);	
 }
 
 void	ss(t_list **lst1, t_list **lst2)
 {
-	sa(lst1);
-	sb(lst2);
+	ft_swap(lst1);
+	ft_swap(lst2);
+	ft_putendl_fd("ss", 1);
 }

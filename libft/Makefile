@@ -6,21 +6,28 @@
 #    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 10:30:04 by azari             #+#    #+#              #
-#    Updated: 2023/03/15 17:44:51 by azari            ###   ########.fr        #
+#    Updated: 2023/03/16 08:07:12 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # _*_ MakeFile _*_
 
-NAME = libft.a
-CC = cc
-FLAGS =  -Wall -Werror -Wextra
-CFILES =  ft_strlen.c  ft_isdigit.c  ft_strchr.c ft_atoi.c  ft_strdup.c \
-		  ft_substr.c ft_strjoin.c  ft_raise_error.c ft_strtok.c ft_check_sort_list.c ft_strtok.c
+NAME 	= 	libft.a
+
+CC 		= 	cc
+
+FLAGS	=  	-Wall -Werror -Wextra
+
+CFILES	=  	ft_strlen.c  ft_isdigit.c  ft_strchr.c ft_atoi.c  ft_strdup.c	\
+		  	ft_substr.c ft_strjoin.c  ft_raise_error.c ft_strtok.c 			\
+		  	ft_check_sort_list.c ft_strtok.c ft_putendl_fd.c				\
 		  
-BONUSC = ft_lstadd_back.c ft_lstnew.c ft_lstsize.c ft_lstlast.c ft_lstadd_front.c ft_lstdelone.c ft_lstclear.c 
-OFILES = ${CFILES:.c=.o}
-BONUSO = ${BONUSC:.c=.o}
+BONUSC	= 	ft_lstadd_back.c ft_lstnew.c ft_lstsize.c ft_lstlast.c 			\
+			ft_lstadd_front.c ft_lstdelone.c ft_lstclear.c
+
+OFILES	= 	${CFILES:.c=.o}
+
+BONUSO	= 	${BONUSC:.c=.o}
 
 all : ${NAME}
 
