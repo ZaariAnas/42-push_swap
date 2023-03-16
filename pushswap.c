@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:56:40 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 10:23:54 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/16 13:24:11 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int	main(int ac, char **av)
 		printf("list_a --> [%d]\n", tmp->content);
 		tmp = tmp->next;
 	}
-	rr(&list_a, &list_a);
-	printf("------[ ra ]------\n");
+	ft_sort_5(&list_a, &list_b);
+	printf("----------------------[ ft_sort_3 ]\n");
 	tmp = list_a;
-	printf("------[ a ]------\n");
+	printf("--------[ a ]\n");
 	while (tmp)
 	{
 		printf("list_a --> [%d]\n", tmp->content);
@@ -46,3 +46,4 @@ int	main(int ac, char **av)
 	// }
 	return (0);
 }
+

@@ -6,7 +6,7 @@
 #    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/12 12:15:21 by azari             #+#    #+#              #
-#    Updated: 2023/03/16 10:20:01 by azari            ###   ########.fr        #
+#    Updated: 2023/03/16 12:09:33 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,14 @@ NAME 		= 	push_swap
 
 LIBFT 		= 	libft/libft.a
 
-FT_PRINTF 	= 	ft_printf/libftprintf.a
-
-CFILES		= 	pushswap.c						\
-				src/instructions/ft_push.c		\
-				src/instructions/ft_swap.c		\
-				src/instructions/ft_rrotate.c	\
-				src/instructions/ft_rotate.c	\
-				src/parsing/ft_parser.c			\
+CFILES		= 	pushswap.c							\
+				src/instructions/ft_push.c			\
+				src/instructions/ft_swap.c			\
+				src/instructions/ft_rrotate.c		\
+				src/instructions/ft_rotate.c		\
+				src/parsing/ft_parser.c				\
+				src/sorting_3/ft_sort_3.c			\
+				src/sorting_5/ft_sort_5.c			\
 
 OFILES		= 	$(CFILES:.c=.o)
 
@@ -34,9 +34,7 @@ all 	:   $(NAME)
 $(NAME) : $(OFILES) 
 	@make bonus -C libft
 	@echo "\033[33;1m😎  making LIBFT\033[0m"
-	@make -C ft_printf
-	@echo "\033[33;1m😎  making FT_PRINTF\033[0m"
-	@$(CC) $(CFILES) libft/libft.a ft_printf/libftprintf.a -o $(NAME)
+	@$(CC) $(CFILES) libft/libft.a -o $(NAME)
 	@echo "\033[33;1m😎  done making\033[0m"
 	@echo "\033[93;1m                                                           \n\
 		██████╗ ██╗   ██╗███████╗██╗  ██╗        ███████╗██╗    ██╗ █████╗ ██████╗	\n\
@@ -54,7 +52,6 @@ clean	:
 
 fclean	: clean
 	@make fclean -C libft
-	@make fclean -C ft_printf
 	@rm -rf $(DEP) $(NAME)
 	@echo "\033[32m✅  object files and archive removed successfully.\033[0m"
 	@echo "\033[33;1m😎  done cleaning\033[0m"
