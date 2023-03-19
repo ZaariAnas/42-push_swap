@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 07:28:43 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 19:20:23 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/19 09:55:05 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	ft_atoi(const char *str)
 			ft_raise_error();
 		}
 	}
-	if ((str[i] && !ft_isdigit(str[i]))
-		|| str[i - 1] == '-' || str[i - 1] == '+')
+	if ((str[i] && !ft_isdigit(str[i])) || str[i - 1] == '-'
+		|| str[i - 1] == '+')
 	{
 		free((char *)str);
 		ft_raise_error();

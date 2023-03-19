@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:13:44 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 14:56:57 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/19 11:43:35 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ int		ft_find_max(t_list **stack);
 void	ft_sort_3(t_list **stack);
 int		ft_find_min_index(t_list **stack);
 void	ft_sort_5(t_list **stack_a, t_list **stack_b);
+int		ft_check_lis(int a, int b);
+void	ft_lis(t_list **stack);
 
 #endif

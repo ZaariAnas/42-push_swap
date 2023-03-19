@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 12:13:19 by azari             #+#    #+#             */
-/*   Updated: 2023/03/15 16:28:44 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/19 11:27:28 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 t_list	*ft_lstnew(int content)
 {
-	t_list	*new;
+	t_list		*new;
 
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
 	new->content = content;
+	new->lis = 1;
 	new->next = NULL;
 	return (new);
 }
