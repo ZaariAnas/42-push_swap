@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:58:08 by azari             #+#    #+#             */
-/*   Updated: 2023/03/19 17:53:43 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/20 21:54:39 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 typedef struct s_list
 {
 	int				content;
+	struct s_list	*next;
+	struct s_list	*prev;
 	int				flag;
 	int				index;
-	int				prev_index;
 	int				lis;
-	struct s_list	*next;
 }	t_list;
 
 int		ft_isdigit(int c);

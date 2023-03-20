@@ -6,39 +6,60 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 10:05:43 by azari             #+#    #+#             */
-/*   Updated: 2023/03/19 18:00:37 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/20 22:36:44 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../pushswap.h"
 
-// t_list	*ft_get_node_by_index(t_list *stack, int index)
-// {
-// 	t_list	*tmp;
+void	ft_flag_lis(t_list *last, int len)
+{
+	t_list	*cur;
 
-// 	tmp = stack;
-// 	while (tmp->index != index)
-// 		tmp = tmp->next;
-// 	return (tmp);
-// }
-void	ft_lis(t_list **stack)
+	cur = last;
+	while (len--)
+	{
+		cur->flag = 1;
+		cur = cur->prev;
+	}
+}
+
+void	ft_set_lis(t_list **stack_a, t_list **stack_b, int len)
+{
+	int		size;
+
+	size = ft_lstsize(*stack_a);
+	while (size != len)
+	{
+		((*stack_a)->flag) && (ra(stack_a), size += 0);
+		(!(*stack_a)->flag) && (pb(stack_a, stack_b), size--);
+	}
+}
+
+void	ft_lis(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*i;
 	t_list	*j;
+	t_list	*last;
+	// int		len;
 
-	i = (*stack)->next;
+	(void)stack_b;
+	i = (*stack_a)->next;
 	while (i)
 	{
-		j = *stack;
+		j = *stack_a;
 		while (j != i)
 		{
 			if (j->content < i->content && (j->lis + 1) >= i->lis)
 			{
 				i->lis = j->lis + 1;
-				i->prev_index = j->index;
+				i->prev = j;
+				last = i;
 			}
 			j = j->next;
 		}
 		i = i->next;
 	}
+	ft_flag_lis(last, last->lis);
+	ft_set_lis(stack_a, stack_b, last->lis);
 }
