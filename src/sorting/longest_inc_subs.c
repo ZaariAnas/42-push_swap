@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   longest_inc_subs.c                                 :+:      :+:    :+:   */
@@ -36,30 +36,43 @@ void	ft_set_lis(t_list **stack_a, t_list **stack_b, int len)
 	}
 }
 
+t_list	*ft_find_max_len(t_list *stack)
+{
+	t_list	*cur;
+	t_list	*max;
+
+	cur = stack;
+	max = stack;
+	while (cur)
+	{
+		(cur->lis > max->lis) && (max = cur);
+		cur = cur->next;
+	}
+	return (max);
+}
 void	ft_lis(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*i;
 	t_list	*j;
 	t_list	*last;
-	// int		len;
 
-	(void)stack_b;
 	i = (*stack_a)->next;
 	while (i)
 	{
-		j = *stack_a;
+		j = i->next;
 		while (j != i)
 		{
+			(!j) && (j = *stack_a);
 			if (j->content < i->content && (j->lis + 1) >= i->lis)
 			{
 				i->lis = j->lis + 1;
 				i->prev = j;
-				last = i;
 			}
 			j = j->next;
 		}
 		i = i->next;
 	}
+	last = ft_find_max_len(*stack_a);
 	ft_flag_lis(last, last->lis);
 	ft_set_lis(stack_a, stack_b, last->lis);
 }

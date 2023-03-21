@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:13:44 by azari             #+#    #+#             */
-/*   Updated: 2023/03/20 22:28:08 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/21 09:17:36 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ void	ft_lis(t_list **stack_a, t_list **stack_b);
 void	ft_flag_lis(t_list *last, int len);
 t_list	*ft_get_node_by_index(t_list *stack, int index);
 void	ft_set_lis(t_list **stack_a, t_list **stack_b, int len);
+t_list	*ft_find_max_len(t_list *stack);
 
 #endif
