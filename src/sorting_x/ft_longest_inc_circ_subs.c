@@ -34,6 +34,8 @@ void	ft_set_lis(t_list **stack_a, t_list **stack_b, int len)
 		((*stack_a)->flag) && (ra(stack_a), size += 0);
 		(!(*stack_a)->flag) && (pb(stack_a, stack_b), size--);
 	}
+	while (!ft_check_sort_list(*stack_a))
+		ra(stack_a);
 }
 
 t_list	*ft_find_max_len(t_list *stack)

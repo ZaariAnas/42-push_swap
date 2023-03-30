@@ -6,7 +6,7 @@
 #    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/12 12:15:21 by azari             #+#    #+#              #
-#    Updated: 2023/03/20 13:06:01 by azari            ###   ########.fr        #
+#    Updated: 2023/03/28 15:28:56 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,16 @@ NAME 		= 	push_swap
 
 LIBFT 		= 	libft/libft.a 
 
-CFILES		= 	pushswap.c							\
-				src/instructions/ft_push.c			\
-				src/instructions/ft_swap.c			\
-				src/instructions/ft_rrotate.c		\
-				src/instructions/ft_rotate.c		\
-				src/parsing/ft_parser.c				\
-				src/sorting_3/ft_sort_3.c			\
-				src/sorting_5/ft_sort_5.c			\
-				src/sorting/longest_inc_subs.c		\
+CFILES		= 	pushswap.c									\
+				src/instructions/ft_push.c					\
+				src/instructions/ft_swap.c					\
+				src/instructions/ft_rrotate.c				\
+				src/instructions/ft_rotate.c				\
+				src/parsing/ft_parser.c						\
+				src/sorting_3/ft_sort_3.c					\
+				src/sorting_5/ft_sort_5.c					\
+				src/sorting_x/ft_longest_inc_circ_subs.c	\
+				src/sorting_x/ft_sort_x.c					\
 
 OFILES		= 	$(CFILES:.c=.o)
 

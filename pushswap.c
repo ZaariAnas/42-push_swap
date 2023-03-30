@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:56:40 by azari             #+#    #+#             */
-/*   Updated: 2023/03/21 10:30:10 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/28 16:28:34 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,30 @@ int	main(int ac, char **av)
 	printf("------------------------------------------[ ft_sort_5 ]\n");
 	printf("----------------------[ instructions ]\n");
 	ft_lis(&list_a, &list_b);
+	ft_add_nonlis(&list_a, &list_b);
+	ft_mark_prev(list_a, list_b);
     tmp = list_a;
-    printf("cont\tlis\tindex\tflag\n");
+    printf("cont\tlis\tflag\n");
     while (tmp)
     {
-        printf("%d\t%d\t%d\t%d\n", tmp->content, tmp->lis, tmp->index, tmp->flag);
+        printf("%d\t%d\t%d\n", tmp->content, tmp->lis, tmp->flag);
         tmp = tmp->next;
 		i++;
     }
     printf("--------------------------------------- : %d\n", i);
-
+	if (ft_check_sort_list(list_a))
+		printf("list is sorted \n");
+	else
+		printf("fail \n");
+    // printf("--------------------------------------- : stack_b\n");
+    // tmp = list_b;
+    // printf("cont\tlis\tflag\n");
+    // while (tmp)
+    // {
+    //     printf("%d\t%d\t%d\n", tmp->content, tmp->lis, tmp->flag);
+    //     tmp = tmp->next;
+	// 	i++;
+    // }
+    printf("--------------------------------------- : prev of %d, is %d\n", list_b->content, list_b->prev->content);
 	return (0);
 }
