@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:29:11 by azari             #+#    #+#             */
-/*   Updated: 2023/03/28 17:05:38 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/30 15:59:13 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,25 @@ void	ft_mark_prev(t_list *stack_a, t_list *node)
 void	ft_set_req_moves(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cur;
-	int		index_a;
-	int		index_b;
+	int		in_a;
+	int		in_b;
 
 	cur = *stack_b;
 	ft_index_stack(*stack_a);
 	ft_index_stack(*stack_b);
 	while (cur)
 	{
-		ft_mark_prev(stack_a, cur);
-		index_a = cur->prev->flag;
-		index_b = cur->flag;
-		if 
+		ft_mark_prev(*stack_a, cur);
+		in_a = cur->prev->flag;
+		in_b = cur->flag;
+		if (in_a < 0 && in_b >= 0)
+			cur->lis = in_b + (in_a * -1);
+		else if (in_b < 0 && in_a >= 0)
+			cur->lis = in_a + (in_b * -1);
+		else if (in_a >= 0 && in_b >= 0)
+			cur->lis = in_a * (in_a >= in_b) + in_b * (in_b >= in_a);
+		else if (in_a < 0 && in_b < 0)
+			cur->lis = -1 * (in_a * (in_a < in_b) + in_b * (in_b < in_a));
+		cur = cur->next;
 	}
 }
