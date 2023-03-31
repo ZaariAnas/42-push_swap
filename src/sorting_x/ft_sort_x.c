@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:29:11 by azari             #+#    #+#             */
-/*   Updated: 2023/03/30 15:59:13 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/31 00:41:43 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,43 @@ void	ft_index_stack(t_list *stack)
 		j--;
 	}
 }
-void	ft_mark_prev(t_list *stack_a, t_list *node)
+void	ft_mark_prev(t_list *stack_a, t_list **node)
 {
 	t_list	*cur;
+	t_list	*min;
 
+	min = ft_find_min(&stack_a);
+	cur = min;
+	while (cur)
+	{
+		if (cur->content > (*node)->content)
+		{
+			(*node)->prev = cur;
+			break;
+		}
+		cur=cur->next;
+	}
 	cur = stack_a;
-	while (cur-> next && cur->content < node->content)
-		cur = cur->next;
-	node->prev = cur;
+	while (cur != min)
+	{
+		if (stack_a->content > (*node)->content && stack_a->content < min->content)
+			(*node)->prev = stack_a;
+		stack_a = stack_a->next;
+	}
 }
+
 void	ft_set_req_moves(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cur;
 	int		in_a;
 	int		in_b;
 
-	cur = *stack_b;
+	cur = (*stack_b);
 	ft_index_stack(*stack_a);
 	ft_index_stack(*stack_b);
 	while (cur)
 	{
-		ft_mark_prev(*stack_a, cur);
+		ft_mark_prev(*stack_a, &cur);
 		in_a = cur->prev->flag;
 		in_b = cur->flag;
 		if (in_a < 0 && in_b >= 0)

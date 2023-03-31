@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:58:08 by azari             #+#    #+#             */
-/*   Updated: 2023/03/21 11:19:38 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/30 17:11:04 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ void	ft_lstclear(t_list **lst, void (*del)(int));
 void	ft_raise_error(void);
 int		ft_check_sort_list(t_list *lst);
 char	*ft_strtok(char *str, char *sep);
-int		ft_find_min(t_list **stack);
 
 #endif

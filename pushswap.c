@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:56:40 by azari             #+#    #+#             */
-/*   Updated: 2023/03/30 15:58:55 by azari            ###   ########.fr       */
+/*   Updated: 2023/03/31 00:33:50 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ int	main(int ac, char **av)
 	printf("------------------------------------------[ ft_sort_5 ]\n");
 	printf("----------------------[ instructions ]\n");
 	ft_lis(&list_a, &list_b);
-	ft_set_req_moves(&list_a, &list_b);
-	// ft_mark_prev(list_a, list_b);
+	pa(&list_a, &list_b);
+	pa(&list_a, &list_b);
+	// ft_set_req_moves(&list_a, &list_b);
+	ft_mark_prev(list_a, &list_b);
     tmp = list_a;
     printf("cont\tlis\tflag\n");
     while (tmp)
