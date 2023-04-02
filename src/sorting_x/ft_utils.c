@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:07:17 by azari             #+#    #+#             */
-/*   Updated: 2023/03/30 23:39:27 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/01 23:10:11 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,15 @@ t_list	*ft_find_min(t_list	**stack)
 		tmp = tmp->next;
 	}
 	return (node);
+}
+void	ft_null_prev(t_list **stka, t_list **stkb)
+{
+	t_list *cur;
+
+	cur = *stka;
+	while (cur)
+		cur->prev = NULL;
+	cur = *stkb;
+	while (cur)
+		cur->prev = NULL;
 }

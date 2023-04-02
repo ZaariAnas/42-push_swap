@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:13:44 by azari             #+#    #+#             */
-/*   Updated: 2023/03/31 00:34:37 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/02 01:24:18 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ void	ft_set_req_moves(t_list **stack_a, t_list **stack_b);
 void	ft_mark_prev(t_list *stack_a, t_list **node);
 void	ft_set_req_moves(t_list **stack_a, t_list **stack_b);
 t_list	*ft_find_min(t_list **stack);
+void	ft_null_prev(t_list **stka, t_list **stkb);
+void	ft_sort_x(t_list **stack_a, t_list **stack_b);
 
 #endif

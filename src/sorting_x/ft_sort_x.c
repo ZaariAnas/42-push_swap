@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:29:11 by azari             #+#    #+#             */
-/*   Updated: 2023/03/31 00:41:43 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/02 01:42:39 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,29 @@ void	ft_index_stack(t_list *stack)
 		j--;
 	}
 }
-void	ft_mark_prev(t_list *stack_a, t_list **node)
+void	ft_mark_prev(t_list *stack_a, t_list **p)
 {
 	t_list	*cur;
 	t_list	*min;
+	int		n;
+	int		flag;
 
 	min = ft_find_min(&stack_a);
+	n = (*p)->content;
 	cur = min;
+	flag = 0;
 	while (cur)
 	{
-		if (cur->content > (*node)->content)
-		{
-			(*node)->prev = cur;
-			break;
-		}
+		((cur->content > n) && (!flag)) && ((*p)->prev = cur) && (flag = 1);
 		cur=cur->next;
 	}
 	cur = stack_a;
 	while (cur != min)
 	{
-		if (stack_a->content > (*node)->content && stack_a->content < min->content)
-			(*node)->prev = stack_a;
-		stack_a = stack_a->next;
+		((cur->content > n) && (!flag)) && ((*p)->prev = cur) && (flag = 1);
+		cur=cur->next;
 	}
+	(!flag) && ((*p)->prev = min);
 }
 
 void	ft_set_req_moves(t_list **stack_a, t_list **stack_b)
@@ -83,4 +83,25 @@ void	ft_set_req_moves(t_list **stack_a, t_list **stack_b)
 			cur->lis = -1 * (in_a * (in_a < in_b) + in_b * (in_b < in_a));
 		cur = cur->next;
 	}
+}
+
+void	ft_sort_x(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*cur;
+	t_list	*target;
+	int		min;
+
+	ft_lis(stack_a, stack_b);
+	ft_set_req_moves(stack_a, stack_b);
+	cur = *stack_b;
+	target = cur;
+	while (cur)
+	{
+		(cur->lis < min) && (min = cur->lis) && (target = cur);
+		cur = cur->next;
+	}
+	// ft_process_pb(stack_a, stack_b, target);
+	printf("----------------------------\n");
+	printf("--[best node to push : %d]--\n", target->content);
+	printf("----------------------------\n");
 }
