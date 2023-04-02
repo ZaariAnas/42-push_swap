@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:29:11 by azari             #+#    #+#             */
-/*   Updated: 2023/04/02 01:42:39 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/02 01:49:21 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_index_stack(t_list *stack)
 		j--;
 	}
 }
+
 void	ft_mark_prev(t_list *stack_a, t_list **p)
 {
 	t_list	*cur;
@@ -48,13 +49,13 @@ void	ft_mark_prev(t_list *stack_a, t_list **p)
 	while (cur)
 	{
 		((cur->content > n) && (!flag)) && ((*p)->prev = cur) && (flag = 1);
-		cur=cur->next;
+		cur = cur->next;
 	}
 	cur = stack_a;
 	while (cur != min)
 	{
 		((cur->content > n) && (!flag)) && ((*p)->prev = cur) && (flag = 1);
-		cur=cur->next;
+		cur = cur->next;
 	}
 	(!flag) && ((*p)->prev = min);
 }
@@ -100,7 +101,7 @@ void	ft_sort_x(t_list **stack_a, t_list **stack_b)
 		(cur->lis < min) && (min = cur->lis) && (target = cur);
 		cur = cur->next;
 	}
-	// ft_process_pb(stack_a, stack_b, target);
+	ft_process_pb(stack_a, stack_b, target);
 	printf("----------------------------\n");
 	printf("--[best node to push : %d]--\n", target->content);
 	printf("----------------------------\n");
