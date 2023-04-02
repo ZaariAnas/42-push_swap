@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:13:44 by azari             #+#    #+#             */
-/*   Updated: 2023/04/02 07:31:00 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/02 16:07:45 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	ft_push_neg(t_list **stack_a, t_list **stack_b, t_list *target);
 void	ft_push_diff(t_list **stack_a, t_list **stack_b, t_list *target);
 void	ft_push_diff2(t_list **stack_a, t_list **stack_b, t_list *target);
 void	ft_addback(t_list **stack_a, t_list **stack_b);
+void	ft_find_lis(t_list	**stack);
 //-------------
 void	push_lis(t_list **stack_a, t_list **stack_b);
 void	getting_lis(t_list *stack, int *numlis);

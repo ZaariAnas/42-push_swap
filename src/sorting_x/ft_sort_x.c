@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:29:11 by azari             #+#    #+#             */
-/*   Updated: 2023/04/02 06:14:36 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/02 16:57:50 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,14 @@ void	ft_set_req_moves(t_list **stack_a, t_list **stack_b)
 		in_b = cur->flag;
 		if (in_a < 0 && in_b >= 0)
 			cur->lis = in_b + (in_a * -1);
+		else if (in_a > 0 && in_b > 0 && in_a == in_b)
+			cur->lis = in_a;
+		else if (in_a < 0 && in_b < 0 && in_a == in_b)
+			cur->lis = in_a * -1;
 		else if (in_b < 0 && in_a >= 0)
 			cur->lis = in_a + (in_b * -1);
-		else if (in_a >= 0 && in_b >= 0)
-			cur->lis = in_a * (in_a >= in_b) + in_b * (in_b >= in_a);
+		else if (in_a > 0 && in_b > 0)
+			cur->lis = in_a * (in_a > in_b) + in_b * (in_b > in_a);
 		else if (in_a < 0 && in_b < 0)
 			cur->lis = -1 * (in_a * (in_a < in_b) + in_b * (in_b < in_a));
 		cur = cur->next;
@@ -95,6 +99,7 @@ void	ft_addback(t_list **stack_a, t_list **stack_b)
 	ft_set_req_moves(stack_a, stack_b);
 	cur = *stack_b;
 	target = cur;
+	min = target->lis;
 	while (cur)
 	{
 		(cur->lis < min) && (min = cur->lis) && (target = cur);
