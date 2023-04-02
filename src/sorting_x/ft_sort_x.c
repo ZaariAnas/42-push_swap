@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:29:11 by azari             #+#    #+#             */
-/*   Updated: 2023/04/02 01:49:21 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/02 06:14:36 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,16 @@ void	ft_mark_prev(t_list *stack_a, t_list **p)
 	flag = 0;
 	while (cur)
 	{
-		((cur->content > n) && (!flag)) && ((*p)->prev = cur) && (flag = 1);
+		((cur->content > n) && (!flag)) && ((*p)->link = cur) && (flag = 1);
 		cur = cur->next;
 	}
 	cur = stack_a;
 	while (cur != min)
 	{
-		((cur->content > n) && (!flag)) && ((*p)->prev = cur) && (flag = 1);
+		((cur->content > n) && (!flag)) && ((*p)->link = cur) && (flag = 1);
 		cur = cur->next;
 	}
-	(!flag) && ((*p)->prev = min);
+	(!flag) && ((*p)->link = min);
 }
 
 void	ft_set_req_moves(t_list **stack_a, t_list **stack_b)
@@ -72,7 +72,7 @@ void	ft_set_req_moves(t_list **stack_a, t_list **stack_b)
 	while (cur)
 	{
 		ft_mark_prev(*stack_a, &cur);
-		in_a = cur->prev->flag;
+		in_a = cur->link->flag;
 		in_b = cur->flag;
 		if (in_a < 0 && in_b >= 0)
 			cur->lis = in_b + (in_a * -1);
@@ -86,13 +86,12 @@ void	ft_set_req_moves(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-void	ft_sort_x(t_list **stack_a, t_list **stack_b)
+void	ft_addback(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cur;
 	t_list	*target;
 	int		min;
 
-	ft_lis(stack_a, stack_b);
 	ft_set_req_moves(stack_a, stack_b);
 	cur = *stack_b;
 	target = cur;
@@ -102,7 +101,4 @@ void	ft_sort_x(t_list **stack_a, t_list **stack_b)
 		cur = cur->next;
 	}
 	ft_process_pb(stack_a, stack_b, target);
-	printf("----------------------------\n");
-	printf("--[best node to push : %d]--\n", target->content);
-	printf("----------------------------\n");
 }

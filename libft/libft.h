@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:58:08 by azari             #+#    #+#             */
-/*   Updated: 2023/03/30 17:11:04 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/02 06:10:30 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_list
 {
 	struct s_list	*next;
-	struct s_list	*prev;
+	struct s_list	*link;
 	int				content;
 	int				flag;
 	int				lis;

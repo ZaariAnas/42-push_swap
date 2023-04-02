@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 12:13:19 by azari             #+#    #+#             */
-/*   Updated: 2023/03/28 13:31:02 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/02 06:10:30 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list	*ft_lstnew(int content)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
-	new->prev = NULL;
+	new->link = NULL;
 	new->flag = 0;
 	new->lis = 0;
 	return (new);

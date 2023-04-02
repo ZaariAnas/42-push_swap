@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:13:44 by azari             #+#    #+#             */
-/*   Updated: 2023/04/02 01:24:18 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/02 07:31:00 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,16 @@ void	ft_set_req_moves(t_list **stack_a, t_list **stack_b);
 t_list	*ft_find_min(t_list **stack);
 void	ft_null_prev(t_list **stka, t_list **stkb);
 void	ft_sort_x(t_list **stack_a, t_list **stack_b);
+void	ft_process_pb(t_list **stack_a, t_list **stack_b, t_list *target);
+void	ft_push_pos(t_list **stack_a, t_list **stack_b, t_list *target);
+void	ft_push_neg(t_list **stack_a, t_list **stack_b, t_list *target);
+void	ft_push_diff(t_list **stack_a, t_list **stack_b, t_list *target);
+void	ft_push_diff2(t_list **stack_a, t_list **stack_b, t_list *target);
+void	ft_addback(t_list **stack_a, t_list **stack_b);
+//-------------
+void	push_lis(t_list **stack_a, t_list **stack_b);
+void	getting_lis(t_list *stack, int *numlis);
+void	get_lis(t_list *stack, t_list *start, t_list **maxlis);
+void	justnorme(t_list *tmp, t_list *node, t_list **maxlis, t_list *stack);
 
 #endif

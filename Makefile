@@ -6,7 +6,7 @@
 #    By: azari <azari@student.1337.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/12 12:15:21 by azari             #+#    #+#              #
-#    Updated: 2023/04/01 22:29:18 by azari            ###   ########.fr        #
+#    Updated: 2023/04/02 05:39:31 by azari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ CFILES		= 	pushswap.c									\
 				src/sorting_x/ft_longest_inc_circ_subs.c	\
 				src/sorting_x/ft_sort_x.c					\
 				src/sorting_x/ft_utils.c					\
+				src/sorting_x/ft_process_pb.c				\
 
 OFILES		= 	$(CFILES:.c=.o)
 
