@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:58:08 by azari             #+#    #+#             */
-/*   Updated: 2023/04/02 06:10:30 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/04 18:02:10 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,10 @@ void	ft_lstadd_back(t_list **alst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstdelone(t_list *lst, void (*del)(int));
-void	ft_lstclear(t_list **lst, void (*del)(int));
+void	ft_lstclear(t_list **lst);
 void	ft_raise_error(void);
 int		ft_check_sort_list(t_list *lst);
 char	*ft_strtok(char *str, char *sep);
+int		ft_strcmp(const char *dst, const char *src);
 
 #endif

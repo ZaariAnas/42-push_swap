@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:29:11 by azari             #+#    #+#             */
-/*   Updated: 2023/04/02 16:57:50 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/04 18:18:04 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,18 +74,14 @@ void	ft_set_req_moves(t_list **stack_a, t_list **stack_b)
 		ft_mark_prev(*stack_a, &cur);
 		in_a = cur->link->flag;
 		in_b = cur->flag;
-		if (in_a < 0 && in_b >= 0)
-			cur->lis = in_b + (in_a * -1);
-		else if (in_a > 0 && in_b > 0 && in_a == in_b)
-			cur->lis = in_a;
-		else if (in_a < 0 && in_b < 0 && in_a == in_b)
-			cur->lis = in_a * -1;
-		else if (in_b < 0 && in_a >= 0)
-			cur->lis = in_a + (in_b * -1);
-		else if (in_a > 0 && in_b > 0)
-			cur->lis = in_a * (in_a > in_b) + in_b * (in_b > in_a);
-		else if (in_a < 0 && in_b < 0)
-			cur->lis = -1 * (in_a * (in_a < in_b) + in_b * (in_b < in_a));
+		if (in_a < 0 && in_b < 0)
+			cur->lis = ((in_a < in_b) * in_a + (in_b * !(in_a < in_b))) * -1;
+		else if (in_a >= 0 && in_b >= 0)
+			cur->lis = (in_a >= in_b) * in_a + (in_b * !(in_a >= in_b));
+		else if (in_a >= 0 && in_b < 0)
+			cur->lis = (in_b * -1) + in_a;
+		else if (in_a < 0 && in_b >= 0)
+			cur->lis = (in_a * -1) + in_b;
 		cur = cur->next;
 	}
 }
@@ -106,4 +102,15 @@ void	ft_addback(t_list **stack_a, t_list **stack_b)
 		cur = cur->next;
 	}
 	ft_process_pb(stack_a, stack_b, target);
+}
+
+void	ft_lis(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*last;
+
+	ft_find_lis(stack_a);
+	last = ft_find_max_len(*stack_a);
+	ft_flag_lis(last, last->lis);
+	ft_set_lis(stack_a, stack_b, last->lis);
+	ft_sort_x(stack_a, stack_b);
 }

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_raise_error.c                                   :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 11:13:59 by azari             #+#    #+#             */
-/*   Updated: 2023/04/03 17:47:05 by azari            ###   ########.fr       */
+/*   Created: 2023/04/04 01:34:32 by azari             #+#    #+#             */
+/*   Updated: 2023/04/04 16:54:43 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_raise_error(void)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	write(2, "Error\n", 6);
-	exit(1);
+	size_t	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && (s1[i] == s2[i]))
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

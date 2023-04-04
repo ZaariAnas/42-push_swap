@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 10:59:09 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 11:46:32 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/04 00:35:29 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,8 @@ void	ft_sort_3(t_list **stack)
 	max = ft_find_max(stack);
 	if (ft_lstsize(*stack) == 3)
 	{
-		if (max == (*stack)->content)
-			ra(stack);
-		else if (max == (*stack)->next->content)
-			rra(stack);
+		((*stack)->content == max) && (ra(stack), max += 0);
+		((*stack)->next->content == max) && (rra(stack), max += 0);
 	}
-	if ((*stack)->content > (*stack)->next->content)
-		sa(stack);
+	((*stack)->content > (*stack)->next->content) && (sa(stack), max = 1337);
 }

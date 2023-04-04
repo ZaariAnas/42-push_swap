@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:50:24 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 14:59:04 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/04 18:15:36 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,11 @@ void	ft_sort_5(t_list **stack_a, t_list **stack_b)
 		min_index = ft_find_min_index(stack_a);
 		if (ft_check_sort_list(*stack_a) && !(*stack_b))
 			return ;
-		if (min_index == 0)
-			pb(stack_a, stack_b);
-		else if (min_index > 2)
-			rra(stack_a);
-		else if (min_index && min_index <= 2)
-			ra(stack_a);
+		(min_index == 0) && (pb(stack_a, stack_b), min_index += 0);
+		(min_index > 2) && (rra(stack_a), min_index += 0);
+		(min_index && min_index <= 2) && (ra(stack_a), min_index += 0);
 	}
 	ft_sort_3(stack_a);
-	while (*stack_b)
-		pa(stack_b, stack_a);
+	pa(stack_b, stack_a);
+	(*stack_b) && (pa(stack_b, stack_a), min_index += 0);
 }

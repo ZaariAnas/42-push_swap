@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:13:44 by azari             #+#    #+#             */
-/*   Updated: 2023/04/02 16:07:45 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/04 18:16:49 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,21 @@
 # include <stdlib.h>
 # include <limits.h>
 # include "libft/libft.h"
+# include "bonus/get_next_line/get_next_line.h"
 
 t_list	*ft_parser(char	**av);
+void	ft_swp(t_list **lst);
 void	sa(t_list **lst);
 void	sb(t_list **lst);
 void	ss(t_list **lst1, t_list **lst2);
 void	ft_push(t_list **stack_a, t_list **stack_b);
 void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
-void	ft_rotate(t_list **stack);
+void	ft_rot(t_list **stack);
 void	ra(t_list **stack);
 void	rb(t_list **stack);
 void	rr(t_list **stack_a, t_list **stack_b);
-void	ft_rrotate(t_list **stack);
+void	ft_rrot(t_list **stack);
 void	rra(t_list **stack);
 void	rrb(t_list **stack);
 void	rrr(t_list **stack_a, t_list **stack_b);
@@ -58,10 +60,6 @@ void	ft_push_diff(t_list **stack_a, t_list **stack_b, t_list *target);
 void	ft_push_diff2(t_list **stack_a, t_list **stack_b, t_list *target);
 void	ft_addback(t_list **stack_a, t_list **stack_b);
 void	ft_find_lis(t_list	**stack);
-//-------------
-void	push_lis(t_list **stack_a, t_list **stack_b);
-void	getting_lis(t_list *stack, int *numlis);
-void	get_lis(t_list *stack, t_list *start, t_list **maxlis);
-void	justnorme(t_list *tmp, t_list *node, t_list **maxlis, t_list *stack);
+void	ft_exec_instruc(t_list **stack_a, t_list **stack_b, char *instruc);
 
 #endif

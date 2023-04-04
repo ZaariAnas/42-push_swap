@@ -6,13 +6,13 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:12:54 by azari             #+#    #+#             */
-/*   Updated: 2023/03/16 14:58:44 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/04 16:56:58 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../pushswap.h"
 
-void	ft_swap(t_list **lst)
+void	ft_swp(t_list **lst)
 {
 	int	tmp;
 
@@ -25,19 +25,19 @@ void	ft_swap(t_list **lst)
 
 void	sa(t_list **lst)
 {
-	ft_swap(lst);
+	ft_swp(lst);
 	ft_putendl_fd("sa", 1);
 }
 
 void	sb(t_list **lst)
 {
-	ft_swap(lst);
+	ft_swp(lst);
 	ft_putendl_fd("sb", 1);
 }
 
 void	ss(t_list **lst1, t_list **lst2)
 {
-	ft_swap(lst1);
-	ft_swap(lst2);
+	ft_swp(lst1);
+	ft_swp(lst2);
 	ft_putendl_fd("ss", 1);
 }
