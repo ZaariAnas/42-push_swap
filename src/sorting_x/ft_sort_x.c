@@ -6,7 +6,7 @@
 /*   By: azari <azari@student.1337.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:29:11 by azari             #+#    #+#             */
-/*   Updated: 2023/04/04 18:18:04 by azari            ###   ########.fr       */
+/*   Updated: 2023/04/04 18:20:10 by azari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_index_stack(t_list *stack)
 {
 	int	i;
-	int	j;
 	int	size;
 
 	size = ft_lstsize(stack);
@@ -25,13 +24,13 @@ void	ft_index_stack(t_list *stack)
 		stack->flag = i;
 		stack = stack->next;
 	}
-	j = size / 2;
-	(size % 2 == 0) && (j -= 1);
+	i = size / 2;
+	(size % 2 == 0) && (i -= 1);
 	while (stack)
 	{
-		stack->flag = -j;
+		stack->flag = -i;
 		stack = stack->next;
-		j--;
+		i--;
 	}
 }
 
